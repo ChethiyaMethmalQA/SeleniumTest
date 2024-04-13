@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="with empty fields">
+        <parameter name="userName" value=""></parameter>
+        <parameter name="password" value=""></parameter>
+        <classes>
+            <class name="com.tests.testcases.LoginWithEmptyFieldTest">
+                <methods>
+                    <include name="LoginWithoutCredentials"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="with random username and password">
+        <parameter name="userName" value="John"></parameter>
+        <parameter name="password" value="1234"></parameter>
+        <classes>
+            <class name="com.tests.testcases.LoginWithRandomCredentialTest">
+                <methods>
+                    <include name="LoginWithRandomCredentials"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

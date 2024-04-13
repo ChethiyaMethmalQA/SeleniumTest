@@ -1,11 +1,13 @@
 package com.tests.util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class Config {
 
+    private static final Logger log = LoggerFactory.getLogger(Config.class);
     private static final String TEST_PROPERTY_PATH = "config/testproperties.properties";
     private static Properties properties;
 
@@ -18,7 +20,7 @@ public class Config {
           properties1.load(inputStream);
 
       } catch (Exception e) {
-          throw new RuntimeException(e);
+          log.error("Unable to read property file {}",TEST_PROPERTY_PATH,e);
       }
 
       return properties1;

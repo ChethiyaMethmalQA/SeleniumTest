@@ -3,7 +3,6 @@ package com.pageclass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,6 +29,7 @@ public class LoginPage extends BaseClass{
 
     @FindBy(xpath = "//div[@class='ps ps--active-y']")
     private WebElement scrollingFrame;
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -45,12 +45,6 @@ public class LoginPage extends BaseClass{
 
         this.userName.sendKeys(userName);
         this.password.sendKeys(password);
-
-    }
-
-    public void clickRememberMeBox(){
-
-        rememberMeBox.click();
 
     }
 
